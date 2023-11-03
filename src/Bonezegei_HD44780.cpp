@@ -1,3 +1,4 @@
+#include "Arduino.h"
 /*
   This Library is written for HD44780 LCD
   Author: Bonezegei (Jofel Batutay)
@@ -82,9 +83,9 @@ void Bonezegei_HD44780::begin() {
 
 void Bonezegei_HD44780::latch() {
   digitalWrite(_en, LOW);
-  delayMicroseconds(1);
+  delay(1);
   digitalWrite(_en, HIGH);
-  delayMicroseconds(1);
+  delay(1);
   digitalWrite(_en, LOW);
   delayMicroseconds(100);
 }
@@ -193,5 +194,21 @@ void Bonezegei_HD44780::writeData(uint8_t data) {
     writeByte(data);
   } else {
     write8Bit(data);
+  }
+}
+
+void Bonezegei_HD44780::setPosition(uint8_t x, uint8_t y) {
+  if (y == 0) {
+    writeCommand(0x80 | x);
+  }
+  if (y == 1) {
+    writeCommand(0x80 | 0x40 |x);
+  }
+}
+
+void Bonezegei_HD44780::print(char *str) {
+  while (*str) {
+    writeData(*str);
+    str += 1;
   }
 }
