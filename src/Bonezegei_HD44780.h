@@ -1,3 +1,4 @@
+#include <stdint.h>
 /*
   This Library is written for HD44780 LCD
   Author: Bonezegei (Jofel Batutay)
@@ -35,8 +36,8 @@ public:
   void writeCommand(uint8_t data);
   void writeData(uint8_t data);
 
-
-  void setCursor(uint8_t x, uint8_t y);
+  void setPosition(uint8_t x, uint8_t y);
+  void print(char *str);
 
   int8_t mode;
   //pin Values in private
