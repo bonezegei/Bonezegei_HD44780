@@ -3,6 +3,7 @@
   This Library is written for HD44780 LCD
   Author: Bonezegei (Jofel Batutay)
   Date: October 2023 
+  Updated: November 2023
 */
 #ifndef _BONEZEGEI_HD44780_H_
 #define _BONEZEGEI_HD44780_H_
