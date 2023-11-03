@@ -3,6 +3,7 @@
   This Library is written for HD44780 LCD
   Author: Bonezegei (Jofel Batutay)
   Date: October 2023 
+  Updated: November 2023
 */
 #include "Bonezegei_HD44780.h"
 
@@ -202,7 +203,7 @@ void Bonezegei_HD44780::setPosition(uint8_t x, uint8_t y) {
     writeCommand(0x80 | x);
   }
   if (y == 1) {
-    writeCommand(0x80 | 0x40 |x);
+    writeCommand(0x80 | 0x40 | x);
   }
 }
 
