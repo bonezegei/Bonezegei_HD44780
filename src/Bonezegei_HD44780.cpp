@@ -213,3 +213,7 @@ void Bonezegei_HD44780::print(char *str) {
     str += 1;
   }
 }
+
+ void Bonezegei_HD44780::clear(){
+   writeCommand(0x01);
+ }
