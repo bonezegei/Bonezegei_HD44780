@@ -39,6 +39,7 @@ public:
 
   void setPosition(uint8_t x, uint8_t y);
   void print(char *str);
+  void clear();
 
   int8_t mode;
   //pin Values in private
